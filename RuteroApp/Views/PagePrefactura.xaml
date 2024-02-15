@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RuteroApp.Views.PagePrefactura"
+             xmlns:dg="clr-namespace:Maui.DataGrid;assembly=Maui.DataGrid"
+             Title="lista de Prefacturas">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--  // BUSCAR  -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="60" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Entry
+                x:Name="txtCodPro"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                Placeholder="Codigo"
+                WidthRequest="110" />
+            <Button
+                Grid.Column="1"
+
+                FontSize="10"
+                HeightRequest="30"
+                HorizontalOptions="Center"
+                Text="|||"
+                VerticalOptions="Center"
+                WidthRequest="45" />
+            <Entry
+                x:Name="txtBuscar"
+                Grid.Column="2"
+                Margin="5,0,0,0"
+                CursorPosition="1"
+                HorizontalOptions="Start"
+                Placeholder="Producto a buscar"
+
+                WidthRequest="300" />
+            <Button
+                Grid.Column="3"
+                BackgroundColor="Transparent"
+                FontSize="10"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="70" />
+        </Grid>
+        <!--  PANEL PRINCIPAL  -->
+        <!--  DataGrid Cuenta  -->
+        <dg:DataGrid
+            x:Name="dgProductos"
+            Grid.Row="1"
+            Margin="3,10,3,0"
+            BackgroundColor="#E8EED4"
+            BorderColor="#fff"
+            HeaderBackground="#E8EED4"
+            HeaderHeight="25"
+            IsClippedToBounds="False"
+            SelectionEnabled="True">
+            <dg:DataGrid.NoDataView>
+                <Label
+                    BackgroundColor="White"
+                    HorizontalOptions="Center"
+                    Text="NO HAY DATOS"
+                    VerticalOptions="Center" />
+            </dg:DataGrid.NoDataView>
+            <dg:DataGrid.Columns>
+                <dg:DataGridColumn
+                    Title="Detalle"
+                    HorizontalContentAlignment="Start"
+                    PropertyName="Detalle" />
+                <dg:DataGridColumn
+                    Title="Stock"
+                    Width="80"
+                    PropertyName="Stock" />
+                <dg:DataGridColumn
+                    Title="Precio"
+                    Width="80"
+                    HorizontalContentAlignment="End"
+                    PropertyName="PrecioVenta"
+                    StringFormat="{}{0:N0}" />
+            </dg:DataGrid.Columns>
+        </dg:DataGrid>
+        <!--  Agrega el DataGrid  -->
+    </Grid>
+
+</ContentPage>

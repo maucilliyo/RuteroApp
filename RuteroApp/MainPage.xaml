@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="RuteroApp.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False">
+
+    <ScrollView VerticalOptions="Start">
+
+        <VerticalStackLayout VerticalOptions="Start">
+            <Grid
+                Padding="0"
+                Background="#8f4775"
+                ColumnSpacing="0"
+                HeightRequest="40"
+                RowSpacing="0">
+                <Label
+                    FontAttributes="Bold, Italic"
+                    HorizontalOptions="Center"
+                    Text=" RUTERO "
+                    TextColor="White"
+                    VerticalOptions="Center" />
+            </Grid>
+            <!--  PANEL PRINCIPAL  -->
+            <Grid Padding="30" RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label
+                    Grid.Row="0"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    Text="MENU" />
+                <Button
+                    x:Name="btnPrefactura"
+                    Grid.Row="1"
+                    FontSize="12"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    Text="Prefacturas"
+                    WidthRequest="150" />
+                <Button
+                    x:Name="btnFacturas"
+                    Grid.Row="2"
+                    BackgroundColor="#A568FE"
+                    FontSize="12"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    Text="Facturas"
+                    WidthRequest="150" />
+                <Button
+                    x:Name="btnModificarPro"
+                    Grid.Row="3"
+                    BackgroundColor="#4887A7"
+                    FontSize="12"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    Text="MODIFICAR"
+                    WidthRequest="150" />
+                <Button
+                    x:Name="btnConexion"
+                    Grid.Row="4"
+                    BackgroundColor="Chocolate"
+                    Clicked="btnConexion_Clicked"
+                    FontSize="12"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    Text="CONEXION"
+                    WidthRequest="150" />
+
+                <!--  IMAGEN  -->
+                <Image Grid.Row="5" Source="fondo.jpg" />
+
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
